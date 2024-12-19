@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.Net;
 using Microsoft.EntityFrameworkCore;
 
 namespace Transportes_API.Models;
@@ -30,4 +31,9 @@ public partial class TransportesContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    public static implicit operator TransportesContext(TransportContext v)
+    {
+        throw new NotImplementedException();
+    }
 }
